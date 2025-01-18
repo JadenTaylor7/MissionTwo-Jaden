@@ -72,6 +72,9 @@ public class Program
             Console.WriteLine();
         }
 
+        Console.WriteLine("DICE ROLLING SIMULATION RESULTS");
+        Console.WriteLine("Each '*' represents 1 % of the total number of rolls.");
+        Console.WriteLine($"Total number of rolls = {numRolls}.");
         Console.WriteLine();
 
         //Display percentages
