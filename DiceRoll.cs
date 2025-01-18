@@ -8,7 +8,7 @@ namespace MissionTwo_Jaden
 {
     internal class DiceRoll //I'm keeping this internal for security purposes
     {
-        public void RollTheDice(int rollCount, int[,] diceArray)
+        public int[,] RollTheDice(double rollCount, int[,] diceArray)
         {
 
             //initialize variables
@@ -26,20 +26,24 @@ namespace MissionTwo_Jaden
                 dice2 = rand.Next(1, 7);
 
                 combinedRoll = dice1 + dice2;
-                Console.WriteLine($"Dice roll: {combinedRoll}");
+                //Console.WriteLine($"Dice roll: {combinedRoll}");
+
+                diceArray[combinedRoll - 2, 1] += 1; //increments at proper array slot
             }
 
 
+            ////Display results: for testing only
+            //for (int i = 0; i < diceArray.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < diceArray.GetLength(1); j++)
+            //    {
+            //        Console.Write(diceArray[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
 
 
-            for (int i = 0; i < diceArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < diceArray.GetLength(1); j++)
-                {
-                    Console.Write(diceArray[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
+            return diceArray;
         }
     }
 }
